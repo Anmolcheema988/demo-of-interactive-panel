@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="outer-container">
+    <div id="interactive-panel">
+        <div id="sidebar-left" class="sidebar hidden">
+            <div class="sidebar-icons">
+                <div class="sidebar-icon" id="contacts-app">
+                    <img src="img/back.png" alt="back">
+                </div>
+                <div class="sidebar-icon" id="calendar-app">
+                    <img src="img/home.png" alt="home">
+                </div>
+                <div class="sidebar-icon" id="messages-app">
+                    <img src="img/manager.png" alt="share">
+                </div>
+                <div class="sidebar-icon" id="settings-app">
+                    <img src="img/edit.png" alt="edit">
+                </div>
+                <div class="sidebar-icon" id="settings-app">
+                    <img src="img/control panel.png" alt="control panel">
+                </div>
+                <div class="sidebar-icon" id="settings-app">
+                    <img src="img/signal.png" alt="signal">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="interactive-content" >
+            <div id="clock-date">
+                <div id="clock">17:38</div>
+                <div id="date">01/07/2024 Mon</div>
+            </div>
+            <div id="software-icons">
+                <div class="software-icon" id="whiteboard-app">
+                    <img src="img/white icon.png" alt="Whiteboard">
+                    <p>Whiteboard</p>
+                    <div id="whiteboard-container">
+                        <iframe id="whiteboard-iframe" src="img/wallpaper.jpg" frameborder="0" scrolling="no"></iframe>
+                        <button id="close-whiteboard" onclick="closeWhiteboard()">Close</button>
+                        <div id="toolbar">
+                            <canvas id="myCanvas" ></canvas>
+                            <button id="write-button" onclick="switchToDrawMode()">
+                              <img src="img/pen.png" alt="Write">
+                            </button>
+                            <button id="erase-button" onclick="switchToEraseMode()">
+                              <img src="img/eraser .png" alt="Erase">
+                            </button>
+                            <button id="screenshare-button">
+                                <img src="img/screen share .png" alt="share">
+                            </button>
+                            <button id="shapes-button">
+                                <img src="img/shape .png" alt="shape">
+                            </button>
+                            <button id="add-button">
+                                <img src="img/add.png" alt="add">
+                            </button>
+                              <button id="undo-button">
+                                <img src="img/undo.PNG" alt="Undo">
+                              </button>
+                              <button id="redo-button">
+                                <img src="img/redo.PNG" alt="Redo">
+                              </button>
+                              <button id="touch-button">
+                                <img src="img/touch.png" alt="touch">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="software-icon" id="mirroring-app">
+                    <img src="img/m icon.png" alt="Mirroring">
+                    <p>Mirroring</p>
+                    <div id="mirroring-container">
+                    <iframe id="mirroring-iframe" src="img/mirroring app.jpeg" frameborder="0" scrolling="no"></iframe>
+                    <button id="close-mirroring" onclick="closeMirroring()">Close</button>
+                    </div>
+                </div>
+                <div class="software-icon" id="file-manager-app" onclick="openFileManager()">
+                    <img src="img/file icon.png" alt="File Manager">
+                    <p>File Manager</p>
+                    <div id="file-manager-container">
+                        <iframe id="file-manager-iframe" src="https://tinyfilemanager.github.io/demo/" frameborder="0" scrolling="no"></iframe>
+                        <button id="close-file-manager" onclick="closeFileManager()">Close</button>
+                    </div>
+                </div>
+                <div class="software-icon" id="application-app">
+                    <img src="img/app icon.png" alt="Application">
+                    <p>Application</p>
+                    <div id="application-container">
+                    <iframe id="application-iframe" src="img/application app.jpg" frameborder="0" scrolling="no"></iframe>
+                    <button id="close-application" onclick="closeApplication()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="toggle-left-sidebar" class="toggle-sidebar"><<</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
