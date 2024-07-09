@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     closeWhiteboardButton.addEventListener('click', function() {
-        whiteboardContainer.style.display = 'flex';
-        location.reload(); // Reload the page when closing the whiteboard
+        whiteboardContainer.style.display = 'none';
+        location.reload();
     });
 
     const fileManagerApp = document.getElementById('file-manager-app');
@@ -50,6 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
     closeFileManagerButton.addEventListener('click', function() {
         fileManagerContainer.style.display = 'none';
         location.reload(); // Reload the page when closing the file manager
+    });
+
+    fileManagerContainer.addEventListener('click', function(event) {
+        if (event.target.tagName === 'IMG') {
+            displayPopup("*This is for demonstrative purposes only. So all features are not available.*");
+        }
     });
 
     const mirroringApp = document.getElementById('mirroring-app');
@@ -224,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener for the clear button
     clearButton.addEventListener('click', function() {
-        clearCanvas();
+        displayPopup("*This is for demonstrative purposes only. So all features are not available.*");
     });
 
     // Function to clear the canvas
@@ -235,3 +241,108 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const applicationApp = document.getElementById('application-app');
+    const applicationContainer = document.getElementById('application-container');
+    const closeApplicationButton = document.getElementById('close-application');
+    const applicationIframe = document.getElementById('application-iframe');
+    const image1Button = document.getElementById('image1-button');
+    const image2Button = document.getElementById('image2-button');
+
+    // Set the initial image source
+    let currentImage = 'img/app.jpg';
+    applicationIframe.src = currentImage;
+
+    applicationApp.addEventListener('click', function() {
+        applicationContainer.style.display = 'flex';
+    });
+
+    closeApplicationButton.addEventListener('click', function() {
+        applicationContainer.style.display = 'none';
+        location.reload(); // Reload the page when closing the application
+    });
+
+    image1Button.addEventListener('click', function() {
+        currentImage = 'img/app.jpg';
+        applicationIframe.src = currentImage;
+    });
+
+    image2Button.addEventListener('click', function() {
+        currentImage = 'img/appl.jpg';
+        applicationIframe.src = currentImage;
+    });
+});
+
+const backButton = document.getElementById('back-button');
+backButton.addEventListener('click', function() {
+    location.reload();
+});
+
+const homeButton = document.getElementById('home-button');
+homeButton.addEventListener('click', function() {
+    displayPopup("*This is for demonstrative purposes only. So all features are not available.");
+});
+
+const managerButton = document.getElementById('manager-button');
+managerButton.addEventListener('click', function() {
+    displayPopup("*This is for demonstrative purposes only. So all features are not available.");
+});
+
+const editButton = document.getElementById('edit-button');
+editButton.addEventListener('click', function() {
+    displayPopup("*This is for demonstrative purposes only. So all features are not available.");
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const controlPanelButton = document.getElementById('controlpanel-button');
+    const controlPanelContent = document.getElementById('control-panel-content');
+    const controlPanelImage = document.getElementById('control-panel-image');
+
+    const signalButton = document.getElementById('signal-button');
+    const signalContent = document.getElementById('signal-content');
+    const signalImage = document.getElementById('signal-image');
+
+    controlPanelButton.addEventListener('click', function() {
+        controlPanelContent.style.display = 'flex';
+        signalContent.style.display = 'none'; // Hide signal panel when control panel is opened
+    });
+
+    signalButton.addEventListener('click', function() {
+        signalContent.style.display = 'flex';
+        controlPanelContent.style.display = 'none'; // Hide control panel when signal panel is opened
+    });
+
+    controlPanelImage.addEventListener('click', function() {
+        displayPopup("*This is for demonstrative purposes only. So all features are not available.*");
+    });
+
+    // Event listener for signal image
+    signalImage.addEventListener('click', function() {
+        displayPopup("*This is for demonstrative purposes only. So all features are not available.*");
+    });
+
+    // Function to display popup message
+    function displayPopup(message) {
+        alert(message);
+    }
+});
+
+
+const screenshareButton = document.getElementById('screenshare-button');    
+const shapesButton = document.getElementById('shapes-button');
+const touchButton = document.getElementById('touch-button');   
+
+screenshareButton.addEventListener('click', function() {
+    displayPopup("*This is for demonstrative purposes only. So all features are not available.*");
+});
+shapesButton.addEventListener('click', function() {
+    displayPopup("*This is for demonstrative purposes only. So all features are not available.");
+});
+touchButton.addEventListener('click', function() {
+    displayPopup("*This is for demonstrative purposes only. So all features are not available.");
+});
+function displayPopup(message) {
+    alert(message);
+}

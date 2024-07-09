@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: rgba(0, 204, 255, 0.13);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,31 +11,28 @@ body {
 #outer-container {
     width: 940px; /* Adjust width to match interactive panel plus padding */
     height: 550px; /* Adjust height to match interactive panel plus padding */
-    background-color: #f0f0f0; /* Match background color */
-    border: 2px solid #ccc; /* Match border style */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Match box shadow */
     border-radius: 30px; /* Match border radius */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px; /* Match padding */
     overflow: hidden;
-    background-image: url('img/panel\ body.jpg'); /* Match background image if applicable */
+    background-image: url('img/new.png'); /* Match background image if applicable */
 }
 
 #interactive-panel {
     position: relative;
-    width: 1500px;
+    width: 900px;
     height: 500px;
     background-color: white;
-    border: 2px solid #ccc;
+    border: transparent;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     overflow: hidden;
-    border-radius: 10px; /* Rounded corners for the panel */
+    border-radius: 0px; /* Rounded corners for the panel */
     background-image: url('img/wallpaper.jpg');
 }
 
@@ -185,8 +182,8 @@ body {
     max-width: 950px; /* Limit max width to prevent exceeding panel size */
     max-height: 550px; /* Limit max height to prevent exceeding panel size */
     background-color: white;
-    border: 2px solid #ccc;
-    border-radius: 10px; /* Rounded corners for container */
+    border: 2px solid black;
+    border-radius: 30px; /* Rounded corners for container */
     z-index: 3; /* Ensure container is above panel */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -217,13 +214,13 @@ body {
     transform: translate(-50%, -50%);
     width: 80%; /* Adjust width as needed */
     height: 80%; /* Adjust height as needed */
-    max-width: 800px; /* Limit max width to prevent exceeding panel size */
-    max-height: 400px; /* Limit max height to prevent exceeding panel size */
-    background-color: white;
-    border: 2px solid #ccc;
+    max-width: 600px; /* Limit max width to prevent exceeding panel size */
+    max-height: 480px; /* Limit max height to prevent exceeding panel size */
+    background-color: transparent;
+    border: transparent;
     border-radius: 10px; /* Rounded corners for container */
     z-index: 3; /* Ensure container is above panel */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: transparent;
 }
 
 #file-manager-iframe {
@@ -360,5 +357,79 @@ body {
 #write-button.active {
     background-color: black; /* Highlight active erase button */
     color: white;
+}
+
+#image-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+#image1-button, #image2-button {
+    padding: 8px 16px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 4;
+}
+
+#back-button,#controlpanel-button,#signal-button,#home-button,#edit-button,#manager-button
+{
+background-color: transparent;
+padding:transparent;
+border:transparent;
+}
+
+#back-button:hover,#controlpanel-button:hover,#signal-button:hover,#home-button:hover,#edit-button:hover,#manager-button:hover
+{
+    background-color: grey;
+}
+
+#control-panel-content {
+    display: none;
+    position: absolute;
+    left: 60px;
+    top: 20px;
+}
+
+#control-panel-image {
+    width: 350px;
+    height: 500px;
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+#signal-content{
+    display: none;
+    position: absolute;
+    left: 100px;
+    top: 20px;
+}
+
+#signal-image {
+    width: 600px;
+    height: 350px;
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+#footer {
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow to footer */
+}
+
+#footer p {
+    margin: 0;
+    font-size: 20px;
+    color:red;
 }
 

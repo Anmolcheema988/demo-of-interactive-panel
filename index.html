@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Panel</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
 
@@ -13,23 +14,37 @@
         <div id="sidebar-left" class="sidebar hidden">
             <div class="sidebar-icons">
                 <div class="sidebar-icon" id="contacts-app">
-                    <img src="img/back.png" alt="back">
+                    <button id="back-button">
+                    <img src="img/back.png"  alt="back">
+                </button>
                 </div>
                 <div class="sidebar-icon" id="calendar-app">
+                    <button id="home-button">
                     <img src="img/home.png" alt="home">
+                    </button>
                 </div>
                 <div class="sidebar-icon" id="messages-app">
+                    <button id="manager-button">
                     <img src="img/manager.png" alt="share">
+                    </button>
                 </div>
                 <div class="sidebar-icon" id="settings-app">
+                    <button id="edit-button">
                     <img src="img/edit.png" alt="edit">
+                    </button>
                 </div>
                 <div class="sidebar-icon" id="settings-app">
+                    <button id="controlpanel-button">
                     <img src="img/control panel.png" alt="control panel">
+                    <div id="control-panel-content" >
+                        <img id="control-panel-image" src="img/control panel.jpg" alt="Control Panel Image" >
                 </div>
                 <div class="sidebar-icon" id="settings-app">
+                    <button id="signal-button">
                     <img src="img/signal.png" alt="signal">
-                    
+                    <div id="signal-content" >
+                        <img id="signal-image" src="img/820.jpg" alt="Signal Image" >
+                    </button>
                 </div>
             </div>
         </div>
@@ -87,7 +102,7 @@
                     <img src="img/file icon.png" alt="File Manager">
                     <p>File Manager</p>
                     <div id="file-manager-container">
-                        <iframe id="file-manager-iframe" src="https://tinyfilemanager.github.io/demo/" frameborder="0" scrolling="no"></iframe>
+                        <iframe id="file-manager-iframe" src="img/filemanager.jpg" frameborder="0" scrolling="no"></iframe>
                         <button id="close-file-manager" onclick="closeFileManager()">Close</button>
                     </div>
                 </div>
@@ -95,8 +110,12 @@
                     <img src="img/app icon.png" alt="Application">
                     <p>Application</p>
                     <div id="application-container">
-                    <iframe id="application-iframe" src="img/application app.jpg" frameborder="0" scrolling="no"></iframe>
-                    <button id="close-application" onclick="closeApplication()">Close</button>
+                        <button id="close-application">Close</button>
+                        <iframe id="application-iframe" src="about:blank"></iframe>
+                        <div id="image-buttons">
+                            <button id="image1-button"><<</button>
+                            <button id="image2-button">>></button>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -104,7 +123,9 @@
 
         <button id="toggle-left-sidebar" class="toggle-sidebar"><<</button>
     </div>
-
+     <footer id="footer">
+        <p>*This is for demonstrative purpose only. So, it doesn't have full functionality.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
